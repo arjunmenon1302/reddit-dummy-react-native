@@ -1,4 +1,4 @@
-import { Splash } from "./src/screens/SplashScreen";
+import { OnboardScreen } from "./src/screens/OnboardScreen";
 import { StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -23,35 +23,18 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator>
           <Stack.Screen
-            name="Splash"
-            component={Splash}
-            options={{ headerShown: true }}
+            name="ONBOARD"
+            component={OnboardScreen}
+            options={{ headerShown: false }}
           />
           <Stack.Screen
             name="Home"
             component={HomeScreen}
-            options={{ title: "Welcome" }}
+            options={{ title: "Welcome", headerBackButtonMenuEnabled: false }}
           />
           <Stack.Screen name="Profile" component={ProfileScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>
   );
-
-  // return (
-  //   <View style={styles.container}>
-  //     {/* <Splash /> */}
-  //     <Text>Open up App.js to start working on your app!</Text>
-  //     <StatusBar style="auto" />
-  //   </View>
-  // );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    // alignItems: "center",
-    // justifyContent: "center",
-  },
-});
